@@ -1,2 +1,160 @@
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+//@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
+@import "variables.scss";
+@import "reset.scss";
+
+body {
+  font-family: $font;
+  font-size: $font-size;
+  color: $color;
+  line-height: 1.5;
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+}
+
+.footer {
+  text-align: center;
+  line-height: 50px;
+  background: #EEE;
+}
+
+.header {
+  color: #FFF;
+  text-align: center;
+  background: $style-color;
+
+  .title {
+    padding-top: 100px;
+    font-size: 42px;
+
+    a {
+      color: #FFF;
+    }
+  }
+  .short {
+    margin: 10px 0 100px 0;
+    font-size: 14px;
+  }
+  .nav {
+    background: #FFF;
+    border-bottom: 1px solid #EEE;
+
+    a {
+      display: inline-block;
+      line-height: 50px;
+      padding: 0 30px;
+      color: $color;
+    }
+    a:hover {
+      background: #EEE;
+    }
+  }
+}
+
+.main-content {
+  margin: 30px auto;
+  width: $content-width;
+  overflow: hidden;
+
+  .content-left {
+    float: left;
+    width: $content-width - $content-left-width;
+    box-sizing: border-box;
+    padding-right: 30px;
+  }
+  .content-right {
+    float: left;
+    width: $content-left-width;
+    box-sizing: border-box;
+  }
+}
+
+.postindex {
+  margin-bottom: 40px;
+  border-bottom: 1px solid #EEE;
+
+  .title {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  .title a {
+    font-size: 32px;
+    color: $color;
+  }
+  .title a:hover {
+    color: #000;
+  }
+  .info {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  .excerpt,
+  .content{
+    font-size: 16px;
+    margin-bottom: 25px;
+  }
+  .content {
+    margin-top: 30px;
+  }
+  .content p {
+    margin-bottom: 15px;
+  }
+  .tag {
+    margin-bottom: 15px;
+  }
+  .tag a {
+    color: $link-color;
+    padding-right: 10px;
+  }
+}
+
+.aside-index {
+  margin-bottom: 30px;
+  border: 1px solid #EEE;
+  padding: 0 20px 15px 20px;
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #EEE;
+    line-height: 50px;
+  }
+  .link {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+  a {
+    color: $style-color;
+  }
+  .tag {
+    padding: 0 5px;
+  }
+}
+
+.page {
+  .pagination {
+    text-align: center;
+  }
+  .active {
+    color: #FFF;
+    background: $style-color;
+  }
+  li {
+    margin: 0 4px;
+  }
+  li,
+  a {
+    display: inline-block;
+    width: 36px;
+    line-height: 36px;
+  }
+  a {
+    border: 1px solid #EEE;
+  }
+  a:hover {
+    background: #DDD;
+  }
+}
