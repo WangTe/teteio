@@ -15,4 +15,9 @@ class PostController extends Controller
         $this->setTitle($post->title);
         return view('post')->withPost($post);
     }
+
+    public function about()
+    {
+        return view('about');
+    }
 }

@@ -39,13 +39,14 @@ a {
     font-size: 14px;
   }
   .nav {
+    font-size: 16px;
     background: #FFF;
     border-bottom: 1px solid #EEE;
 
     a {
       display: inline-block;
-      line-height: 50px;
-      padding: 0 30px;
+      line-height: 60px;
+      padding: 0 35px;
       color: $color;
     }
     a:hover {
@@ -55,7 +56,7 @@ a {
 }
 
 .main-content {
-  margin: 30px auto;
+  margin: 40px auto;
   width: $content-width;
   overflow: hidden;
 
