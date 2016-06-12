@@ -56,7 +56,7 @@ a {
 }
 
 .main-content {
-  margin: 40px auto;
+  margin: 40px auto 80px auto;
   width: $content-width;
   overflow: hidden;
 
@@ -64,7 +64,8 @@ a {
     float: left;
     width: $content-width - $content-left-width;
     box-sizing: border-box;
-    padding-right: 30px;
+    padding-right: 40px;
+    min-height: 1px;
   }
   .content-right {
     float: left;

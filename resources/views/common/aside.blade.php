@@ -1,16 +1,16 @@
-@inject('category', 'App\Services\CategoryService')
+@inject('aside', 'App\Services\AsideService')
 
 <div class="aside-index">
     <div class="title">分类</div>
-    @foreach($category->all() as $v)
-    <div class="link"><a href="#">{{ $v->name }}</a> ({{ $v->num }})</div>
+    @foreach($aside->categories() as $v)
+    <div class="link"><a href="{{ url('/category/' . $v->id) }}">{{ $v->name }}</a> ({{ $v->num }})</div>
     @endforeach
 </div>
 <div class="aside-index">
     <div class="title">归档</div>
-    <div class="link"><a href="#">2016年1月</a> (12)</div>
-    <div class="link"><a href="#">2016年1月</a> (12)</div>
-    <div class="link"><a href="#">2016年1月</a> (12)</div>
+    @foreach($aside->archives() as $v)
+    <div class="link"><a href="{{ url('/archive/' . $v->time) }}">{{ $v->time }}</a> ({{ $v->num }})</div>
+    @endforeach
 </div>
 <div class="aside-index">
     <div class="title">标签</div>
