@@ -10,3 +10,9 @@ function static_url($path)
 {
     return elixir($path, 'static/build');
 }
+
+function highlight($string, $keyword)
+{
+    $pattern = "/({$keyword})/i";
+    return preg_replace($pattern, '<span class="highlight">$1</span>', $string);
+}

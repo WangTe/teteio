@@ -82,6 +82,9 @@ a {
     text-align: center;
     margin-bottom: 15px;
   }
+  .title .highlight {
+    color: #F00;
+  }
   .title a {
     font-size: 32px;
     color: $color;
@@ -158,5 +161,22 @@ a {
   }
   a:hover {
     background: #DDD;
+  }
+}
+
+.search-bar {
+  display: block;
+  text-align: center;
+  margin-bottom: 40px;
+
+  .search {
+    border: 1px solid #DDD;
+    border-radius: 3px;
+    padding: 12px;
+    outline: none;
+    width: 500px;
+  }
+  .search-btn {
+    padding: 10px 30px;
   }
 }

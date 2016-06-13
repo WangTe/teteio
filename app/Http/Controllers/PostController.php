@@ -28,8 +28,18 @@ class PostController extends Controller
 
     public function archive($time)
     {
-        var_dump($time);
         $posts = Post::whereRaw("date_format(created_at,'%Y-%m')='{$time}'")->publish()->paginate();
         return view('home')->withPosts($posts);
+    }
+
+    public function search()
+    {
+        $keyword = request('keyword');
+        if (empty($keyword)) {
+            $posts = [];
+        } else {
+            $posts = Post::where('title', 'like', "%{$keyword}%")->publish()->paginate();
+        }
+        return view('search')->withPosts($posts)->withKeyword($keyword);
     }
 }
