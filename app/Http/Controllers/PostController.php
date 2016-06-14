@@ -28,7 +28,7 @@ class PostController extends Controller
 
     public function archive($time)
     {
-        $posts = Post::whereRaw("date_format(created_at,'%Y-%m')='{$time}'")->publish()->paginate();
+        $posts = Post::whereRaw("date_format(created_at,'%Y-%m')=?", [$time])->publish()->paginate();
         return view('home')->withPosts($posts);
     }
 
