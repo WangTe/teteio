@@ -135,7 +135,8 @@ a {
     color: $style-color;
   }
   .tag {
-    padding: 0 5px;
+    padding-right:8px;
+    word-break: keep-all;
   }
 }
 

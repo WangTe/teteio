@@ -24,6 +24,8 @@ Route::get('/search', 'PostController@search');
 Route::get('/category/{id}', 'PostController@category');
 // 归档查看
 Route::get('/archive/{time}', 'PostController@archive');
+// TAG查看
+Route::get('/tag/{tag}', 'PostController@tag');
 
 
 // 测试用的控制器

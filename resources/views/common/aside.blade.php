@@ -14,7 +14,7 @@
 </div>
 <div class="aside-index">
     <div class="title">标签</div>
-    <span class="tag"><a href="#">Linux</a></span>
-    <span class="tag"><a href="#">PHP</a></span>
-    <span class="tag"><a href="#">Laravel</a></span>
+    @foreach($aside->tags() as $tag)
+    <span class="tag"><a href="{{ url('/tag/'. urlencode($tag->name)) }}">{{ $tag->name }}</a></span>
+    @endforeach
 </div>

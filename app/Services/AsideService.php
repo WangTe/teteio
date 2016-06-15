@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Model\Category;
+use App\Model\Tag;
 use Illuminate\Support\Facades\DB;
 
 class AsideService
@@ -21,5 +22,11 @@ class AsideService
             ->get();
 
         return $counts;
+    }
+
+    public function tags()
+    {
+        $tags = Tag::all();
+        return $tags;
     }
 }

@@ -12,7 +12,6 @@ class TestController extends Controller
 {
     public function index()
     {
-        $a = new Services\AsideService();
-        var_dump($a->archives());
+        echo json_encode(123);
     }
 }

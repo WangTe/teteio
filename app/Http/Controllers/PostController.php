@@ -42,4 +42,14 @@ class PostController extends Controller
         }
         return view('search')->withPosts($posts)->withKeyword($keyword);
     }
+
+    public function tag($tag)
+    {
+        $test = [
+            'PHP',
+            '嵌入式'
+        ];
+        $posts = Post::whereRaw('JSON_CONTAINS(tags, ?)=1', [json_encode($test)])->paginate();
+        return view('home')->withPosts($posts);
+    }
 }

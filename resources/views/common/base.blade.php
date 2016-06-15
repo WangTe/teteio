@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
 
     <!-- 响应式相关 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
     <meta name="format-detection" content="telephone=no">
+
+    <!-- 浏览器相关 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
 
     <!-- SEO相关 -->
     <meta name="keywords" content="风格独特,teteio,博客,PHP,netpioneer,网协,北京理工大学,信息对抗">
