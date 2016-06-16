@@ -20,7 +20,17 @@ class Post extends Model
 
     public function scopePublish($query)
     {
-        return $query->where('publish', 1)
-            ->orderBy('created_at', 'DESC');
+        return $query->where('publish', 1);
+    }
+
+    public function scopeOrdering($query, $type = 0)
+    {
+        if ($type == 0) {
+            return $query->orderBy('created_at', 'DESC');
+        } elseif ($type == 1) {
+            return $query->orderBy('created_at', 'ASC');
+        } else {
+            return $query();
+        }
     }
 }

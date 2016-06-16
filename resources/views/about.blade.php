@@ -10,8 +10,8 @@
                 <div class="content">
                     <p>
                         <h2>联系方式</h2>
-                        博客：<a href="http://tete.io">http://tete.io</a> <br />
-                        微博：<a href="http://weibo.com/teteio">http://weibo.com/teteio</a><br />
+                        博客：<a target="_blank" href="http://tete.io">http://tete.io</a> <br />
+                        微博：<a target="_blank" href="http://weibo.com/teteio">http://weibo.com/teteio</a><br />
                     </p>
 
                     <p>

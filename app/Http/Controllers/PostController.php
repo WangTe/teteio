@@ -11,7 +11,7 @@ class PostController extends Controller
 {
     public function index($id)
     {
-        $post = Post::find($id);
+        $post = Post::publish()->find($id);
         // 浏览次数增加
         ++$post->views;
         $post->save();
@@ -22,13 +22,13 @@ class PostController extends Controller
 
     public function category($id)
     {
-        $posts = Post::where('category_id', $id)->publish()->paginate();
+        $posts = Post::where('category_id', $id)->publish()->ordering()->paginate();
         return view('home')->withPosts($posts);
     }
 
     public function archive($time)
     {
-        $posts = Post::whereRaw("date_format(created_at,'%Y-%m')=?", [$time])->publish()->paginate();
+        $posts = Post::whereRaw("date_format(created_at,'%Y-%m')=?", [$time])->publish()->ordering()->paginate();
         return view('home')->withPosts($posts);
     }
 
@@ -38,14 +38,14 @@ class PostController extends Controller
         if (empty($keyword)) {
             $posts = [];
         } else {
-            $posts = Post::where('title', 'like', "%{$keyword}%")->publish()->paginate();
+            $posts = Post::where('title', 'like', "%{$keyword}%")->publish()->ordering()->paginate();
         }
         return view('search')->withPosts($posts)->withKeyword($keyword);
     }
 
     public function tag($tag)
     {
-        $posts = Post::whereRaw('JSON_CONTAINS(tags, ?)=1', [json_encode($tag)])->paginate();
+        $posts = Post::whereRaw('JSON_CONTAINS(tags, ?)=1', [json_encode($tag)])->publish()->ordering()->paginate();
         return view('home')->withPosts($posts);
     }
 }
