@@ -45,11 +45,7 @@ class PostController extends Controller
 
     public function tag($tag)
     {
-        $test = [
-            'PHP',
-            '嵌入式'
-        ];
-        $posts = Post::whereRaw('JSON_CONTAINS(tags, ?)=1', [json_encode($test)])->paginate();
+        $posts = Post::whereRaw('JSON_CONTAINS(tags, ?)=1', [json_encode($tag)])->paginate();
         return view('home')->withPosts($posts);
     }
 }
