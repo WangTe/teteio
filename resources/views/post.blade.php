@@ -17,7 +17,7 @@
                 <div class="tag">
                     标签：
                     @foreach((array) $post->tags as $tag)
-                        <a href="#">$tag</a>
+                        <a href="{{ url('/tag/' . urlencode($tag)) }}">{{ $tag }}</a>
                     @endforeach
                 </div>
             </div>
