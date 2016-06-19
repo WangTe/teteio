@@ -7,3 +7,5 @@ Homestead.json
 .idea
 /public/static
 teteio.mwb.bak
+/public/AdminLTE
+/public/admin/static
