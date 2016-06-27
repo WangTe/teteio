@@ -27,6 +27,9 @@ var config = {
 
     module: {
         loaders: [{
+            test: /\.jsx/,
+            loader: 'babel'
+        }, {
             test: /\.css$/,
             loader: ExtractTextPlugin.extract(['css'])
         }, {
@@ -41,7 +44,7 @@ var config = {
         }]
     },
     resolve: {
-        extensions: ['', '.js', '.json'],
+        extensions: ['', '.js', '.json', '.jsx'],
         alias : {
             entry : path.join(bpath, 'src/entry'),
             html: path.join(bpath, 'src'),
@@ -60,7 +63,7 @@ var config = {
         }),
 
         // 将jquery打包至公共bundle
-        new webpack.optimize.CommonsChunkPlugin('jquery', 'vendor.js'),
+        new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
 
         new ExtractTextPlugin('vendor.css', {
             allChunk : true
@@ -71,7 +74,7 @@ var config = {
         //  on the global var jQuery
         // "layer": "layer"
         // jquery : "jQuery"
-}
+    }
 }
 
 // HTMLWebpackPlugin处理
