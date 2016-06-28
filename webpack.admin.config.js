@@ -14,7 +14,7 @@ var bpath = path.join(__dirname, 'public/admin');
 
 // 入口文件
 var entries = {
-    index : 'entry/index.js',
+    index : 'entry/index.jsx',
     // login : 'js/login.js',
 }
 
@@ -27,8 +27,8 @@ var config = {
 
     module: {
         loaders: [{
-            test: /\.jsx/,
-            loader: 'babel'
+            test: /\.jsx$/,
+            loader: 'babel?presets=react'
         }, {
             test: /\.css$/,
             loader: ExtractTextPlugin.extract(['css'])
@@ -44,7 +44,7 @@ var config = {
         }]
     },
     resolve: {
-        extensions: ['', '.js', '.json', '.jsx'],
+        extensions: ['', '.js', '.json'],
         alias : {
             entry : path.join(bpath, 'src/entry'),
             html: path.join(bpath, 'src'),
